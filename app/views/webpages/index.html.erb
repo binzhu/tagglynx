@@ -1,0 +1,26 @@
+<h1>Listing webpages</h1>
+
+<table>
+  <tr>
+    <th>Address</th>
+    <th>User</th>
+    <th>Active</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @webpages.each do |webpage| %>
+  <tr>
+    <td><%= link_to webpage.title, webpage %></td>
+
+    <td><%= webpage.user_id %></td>
+    <td><%= webpage.active %></td>
+    <td><%= link_to 'Edit', edit_webpage_path(webpage) %></td>
+    <td><%= link_to 'Destroy', webpage, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Webpage', new_webpage_path %>

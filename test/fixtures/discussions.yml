@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  webpage_id: 1
+  title: MyString
+  content: MyString
+  active: 1
+  sticky: 1
+  user_id: 1
+  countviews: 1
+
+two:
+  webpage_id: 1
+  title: MyString
+  content: MyString
+  active: 1
+  sticky: 1
+  user_id: 1
+  countviews: 1

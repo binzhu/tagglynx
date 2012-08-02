@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Body:</b>
+  <%= @announcement.body %>
+</p>
+
+<p>
+  <b>Enabled:</b>
+  <%= @announcement.enabled %>
+</p>
+
+<p>
+  <b>Allow dismiss:</b>
+  <%= @announcement.allow_dismiss %>
+</p>
+
+<p>
+  <b>Sort:</b>
+  <%= @announcement.sort %>
+</p>
+
+<p>
+  <b>Date inserted:</b>
+  <%= @announcement.date_inserted %>
+</p>
+
+
+<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
+<%= link_to 'Back', announcements_path %>

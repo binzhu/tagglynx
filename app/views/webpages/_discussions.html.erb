@@ -1,0 +1,20 @@
+
+<%@webpage.discussions.each do |d|%>
+<hr>
+  
+  
+<div class="discusitem">
+  <b><%= d.title%></b> - by <%=d.user.username%><div class="followlk"><%=followlk(d)%></div></i> comment count: <%=d.comments.count%><br />
+  <%= d.content%><i><br />
+<%=render :partial => 'comments/form', :locals => {:did => d.id}%>
+  <div class="commentsection">
+    <%d.comments.each do |c|%>
+    <div class="commentitem">
+      C: <%=c.content%>--by <i><%=c.user.username%><div class="followlk"><%=followlk(c)%></div></i>
+    </div><!--commentitem div end-->
+    <%end%>
+  </div><!--commentsection div end-->
+</div><!--discusitem div end-->
+
+<%end%>
+

@@ -1,0 +1,31 @@
+<h1>Listing announcements</h1>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th>Enabled</th>
+    <th>Allow dismiss</th>
+    <th>Sort</th>
+    <th>Date inserted</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @announcements.each do |announcement| %>
+  <tr>
+    <td><%= announcement.body %></td>
+    <td><%= announcement.enabled %></td>
+    <td><%= announcement.allow_dismiss %></td>
+    <td><%= announcement.sort %></td>
+    <td><%= announcement.date_inserted %></td>
+    <td><%= link_to 'Show', announcement %></td>
+    <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
+    <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Announcement', new_announcement_path %>

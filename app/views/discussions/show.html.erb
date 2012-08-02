@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Webpage:</b>
+  <%= @discussion.webpage_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @discussion.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @discussion.content %>
+</p>
+
+<p>
+  <b>Active:</b>
+  <%= @discussion.active %>
+</p>
+
+<p>
+  <b>Sticky:</b>
+  <%= @discussion.sticky %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @discussion.user_id %>
+</p>
+
+<p>
+  <b>Countviews:</b>
+  <%= @discussion.countviews %>
+</p>
+
+
+<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
+<%= link_to 'Back', discussions_path %>

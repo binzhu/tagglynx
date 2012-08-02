@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  body: MyText
+  enabled: 1
+  allow_dismiss: 1
+  sort: 1
+  date_inserted: 2012-08-02 12:08:40
+
+two:
+  body: MyText
+  enabled: 1
+  allow_dismiss: 1
+  sort: 1
+  date_inserted: 2012-08-02 12:08:40

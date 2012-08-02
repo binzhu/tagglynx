@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tagglynx</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="container">
+  <header>
+    <h1>Tagglynx</h1>
+    <div id="authlink"><%=%></div>
+    <%=authlink%>
+  </header>
+  <nav>
+    <%=link_to 'webrepos', :controller => 'webpages'%>
+    <%=link_to 'discussions', :controller => 'discussions'%>
+    <%=link_to 'comments', :controller => 'comments'%>
+    <%=link_to 'users', :controller => 'users'%>
+    <%=link_to 'friends', :controller => 'friends'%>
+  </nav>
+  <%=render 'layouts/announcement'%>
+  <%= yield %>
+</div>
+</body>
+</html>
+

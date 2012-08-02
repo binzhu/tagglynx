@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+  <b>Web Page:</b>
+  <%= link_to @webpage.title, @webpage.domain + @webpage.url %>
+<br />
+  <b>Started by:</b>
+  <%=link_to @webpage.user.username, @webpage.user %>
+<div>
+  <b>Allow discussion?:</b>
+  <%= @webpage.active %>
+  <b>Discussion count: </b>
+  <%= @webpage.discussions.count%>
+</div>
+<div id="discussionform">
+  <%=render 'discussions/form'%>
+</div>
+<div id="discussionsection">
+  <%=render 'discussions'%>
+</div>

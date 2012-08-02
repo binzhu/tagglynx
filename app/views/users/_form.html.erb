@@ -1,0 +1,64 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  Username: <%=@user.username%>
+  <div class="field">
+    <%= f.label :fname %><br />
+    <%= f.text_field :fname %>
+  </div>
+  <div class="field">
+    <%= f.label :lname %><br />
+    <%= f.text_field :lname %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+<%if params[:controller] == 'new' %>
+  <div class="field">
+    <%= f.label :email_confirmation %><br />
+    <%= f.text_field :email_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :pwd %><br />
+    <%= f.password_field :pwd %>
+  </div>
+  <div class="field">
+    <%= f.label :pwd_confirmation %><br />
+    <%= f.password_field :pwd_confirmation %>
+  </div>
+<%end%>
+  <div class="field">
+    <%= f.label :country %><br />
+    <%=f.select(:country, [['USA',1],['China', 2]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :postal %><br />
+    <%= f.text_field :postal %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br />
+    <%= f.select(:gender,[['male',1],['female',2],['neutral',3],['both',4]]) %>
+  </div>
+  <div class="field">
+    <%= f.label :dob %><br />
+    <%= f.date_select :dob %>
+  </div>
+By clicking Sign Up, you agree to our <%=link_to 'Terms.' %>
+  <div class="actions">
+    <%= f.submit 'SIGN UP' %>
+  </div>
+<% end %>

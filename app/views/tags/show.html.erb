@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @tag.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @tag.user_id %>
+</p>
+
+<p>
+  <b>Date inserted:</b>
+  <%= @tag.date_inserted %>
+</p>
+
+<p>
+  <b>Tagcount:</b>
+  <%= @tag.tagcount %>
+</p>
+
+
+<%= link_to 'Edit', edit_tag_path(@tag) %> |
+<%= link_to 'Back', tags_path %>

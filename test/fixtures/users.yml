@@ -1,0 +1,47 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  username: MyString
+  pwd: MyString
+  seed: MyString
+  fname: MyString
+  mname: MyString
+  lname: MyString
+  country: MyString
+  postal: MyString
+  about: MyText
+  email: MyString
+  showemail: 1
+  gender: 1
+  dob: 2012-07-24 13:39:52
+  invited_by: 1
+  firstlogin: 2012-07-24 13:39:52
+  lastlogin: 2012-07-24 13:39:52
+  timediff: 1
+  active: 1
+  fb_id: MyString
+  twitter_id: MyString
+  blog_link: MyString
+
+two:
+  username: MyString
+  pwd: MyString
+  seed: MyString
+  fname: MyString
+  mname: MyString
+  lname: MyString
+  country: MyString
+  postal: MyString
+  about: MyText
+  email: MyString
+  showemail: 1
+  gender: 1
+  dob: 2012-07-24 13:39:52
+  invited_by: 1
+  firstlogin: 2012-07-24 13:39:52
+  lastlogin: 2012-07-24 13:39:52
+  timediff: 1
+  active: 1
+  fb_id: MyString
+  twitter_id: MyString
+  blog_link: MyString
