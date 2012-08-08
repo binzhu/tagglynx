@@ -4,13 +4,13 @@
   
   
 <div class="discusitem">
-  <b><%= d.title%></b> - by <%=d.user.username%><div class="followlk"><%=followlk(d)%></div></i> comment count: <%=d.comments.count%><br />
+  <b><%=d.user.username%></b><div class="followlk"> <%=followlk(d)%>:</div> <%= d.title%>   <div style="display: inline; float: right; margin-right: 40px;" class="count"><%= pluralize(d.comments.count,'comment')%></div><br />
   <%= d.content%><i><br />
 <%=render :partial => 'comments/form', :locals => {:did => d.id}%>
   <div class="commentsection">
     <%d.comments.each do |c|%>
     <div class="commentitem">
-      C: <%=c.content%>--by <i><%=c.user.username%><div class="followlk"><%=followlk(c)%></div></i>
+      C: <%=c.content%>--by <%=c.user.username%><div class="followlk"><%=followlk(c)%></div>
     </div><!--commentitem div end-->
     <%end%>
   </div><!--commentsection div end-->

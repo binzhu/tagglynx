@@ -1,4 +1,14 @@
 class UsersController < ApplicationController
+  
+  before_filter :authenticate, :except => ['register','create']
+  
+  def authenticate
+    if session[:user_id].nil?
+      flash[:alert] = 'You need to login.'
+      redirect_to :controller => 'admin', :action => 'login'
+    end
+  end
+  
   # GET /users
   # GET /users.json
   def index
@@ -23,7 +33,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   # GET /users/new.json
-  def new
+  def register
     @user = User.new
 
     respond_to do |format|
@@ -47,7 +57,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        session[:user_id] = @user.id
+        format.html { redirect_to @user, notice: 'Automatically logged in' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }

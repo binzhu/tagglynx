@@ -10,7 +10,9 @@
       </ul>
     </div>
   <% end %>
-  Username: <%=@user.username%>
+  <%if params[:action] == 'edit' %>
+    Username: <%=@user.username%>
+  <%end%>
   <div class="field">
     <%= f.label :fname %><br />
     <%= f.text_field :fname %>
@@ -23,7 +25,7 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
-<%if params[:controller] == 'new' %>
+<%if params[:action] == 'register' %>
   <div class="field">
     <%= f.label :email_confirmation %><br />
     <%= f.text_field :email_confirmation %>
