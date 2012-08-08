@@ -2,6 +2,23 @@ class WebpagesController < ApplicationController
   # GET /webpages
   # GET /webpages.json
   def index
+    if !params[:url].nil?
+      crt_pg = Webpage.find_by_url(params[:url])
+        if crt_pg.nil?
+          pg = Webpage.new(:url => params[:url],
+                           :user_id => session[:user_id],
+                           :title => params[:title])
+          if pg.save
+            redirect_to pg
+            return
+          end
+        else
+          redirect_to crt_pg
+          return
+        end
+    end
+        
+
     @webpages = Webpage.all
 
     respond_to do |format|
@@ -13,6 +30,7 @@ class WebpagesController < ApplicationController
   # GET /webpages/1
   # GET /webpages/1.json
   def show
+
     @webpage = Webpage.find(params[:id])
     @discussion = Discussion.new
     @comment = Comment.new

@@ -8,10 +8,6 @@ $(document).ready(function(){
     $(this).parent().fadeOut();
     return false;
     })//click function end
-    
-    var url =  parent.window.location
-    $('#currentpage').html(url.toString());
-    
-    
+
 
 })
