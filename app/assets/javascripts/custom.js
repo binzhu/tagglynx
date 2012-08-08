@@ -9,7 +9,7 @@ $(document).ready(function(){
     return false;
     })//click function end
     
-    var url = window.location
+    var url =  parent.window.location
     $('#currentpage').html(url.toString());
     
     
