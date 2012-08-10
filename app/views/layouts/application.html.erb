@@ -2,28 +2,45 @@
 <html>
 <head>
   <title>Tagglynx</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application", "custom" %>
+  <%= stylesheet_link_tag    "application","custom","googlefont" %>
+  <%= javascript_include_tag "application","custom"  %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="container">
-  <header>
-    <h1>Tagglynx</h1>
-    <div id="authlink"><%=%></div>
-    <%=authlink%>
-  </header>
+<div id="sidebar">
+  <div id="header">
+      <div class="header-padding">
+      <%= link_to (image_tag 'logo.jpg'), '/' %>
+      </div><!--header padding end-->
+  </div><!--header end-->
+  
   <div id="currentpage"></div>
-  <nav>
-    <%=link_to 'webrepos', :controller => 'webpages'%>
-    <%=link_to 'discussions', :controller => 'discussions'%>
-    <%=link_to 'comments', :controller => 'comments'%>
-    <%=link_to 'users', :controller => 'users'%>
-    <%=link_to 'friends', :controller => 'friends'%>
-  </nav>
-  <%=render 'layouts/announcement'%>
+
+  <div class="announcement"></div>
+  
+  <div id="content">
+    <% if !session[:user_id].nil? %>
+				<div class="profile">
+				<div class="profile-padding">
+					<div class="profileBox"><%=link_to (useravatar(crt_user)), crt_user%></div>
+					<div class="profileText">
+						<h3><%=username%></h3>
+						<p><%=logout%></p>
+					</div>
+					<div class="fix"></div>
+				</div>
+				</div><!-- profile end -->
+
+    <% end%>
   <%= yield %>
-</div>
+
+  </div><!--content end-->
+  <div class="fix"></div>
+  <div id="advertisements">
+    Ad
+  </div><!-- advertisement end -->
+  <div class="fix"></div>
+</div><!--sidebar end-->
 </body>
 </html>
 

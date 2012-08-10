@@ -1,20 +1,42 @@
-
+<ul id="messageboard">
 <%@webpage.discussions.each do |d|%>
-<hr>
-  
-  
-<div class="discusitem">
-  <b><%=d.user.username%></b><div class="followlk"> <%=followlk(d)%>:</div> <%= d.title%>   <div style="display: inline; float: right; margin-right: 40px;" class="count"><%= pluralize(d.comments.count,'comment')%></div><br />
-  <%= d.content%><i><br />
-<%=render :partial => 'comments/form', :locals => {:did => d.id}%>
-  <div class="commentsection">
-    <%d.comments.each do |c|%>
-    <div class="commentitem">
-      C: <%=c.content%>--by <%=c.user.username%><div class="followlk"><%=followlk(c)%></div>
-    </div><!--commentitem div end-->
-    <%end%>
-  </div><!--commentsection div end-->
-</div><!--discusitem div end-->
+<li>
+  <div class="messageboard-padding">
+    <div class="listingBox">
+      <div class="expandBox"></div>
+        <h2><%= d.title%></h2>
+        <div class="profileBox">
+          <%=useravatar(d.user)%>
+        </div><!--profile box end-->
+        <div class="msgContent">
+          <h3><%=d.user.username%> <span class="timestamp">1 min</span></h3>
+          <p><%=d.content%></p>
+          <p class="readMore"><a href="#" id="<%=d.id%>">&laquo; Reply</a></p>
+        </div><!--msgContent end-->
+        <ul>
+        <%d.comments.each do |c|%>
+          <li>
+            <div class="listingBox">
+              <div class="profileBox"><%=useravatar(c.user)%></div>
+              <div class="msgContent"><h3><%=c.user.username%> <span class="timestamp">2 min</span></h3>
+                <p><%=c.content%></p>
+                <p class="readMore"><a href="#">&laquo; Reply</a></p>
+              </div><!--msgContent end-->
+            </div><!--listing Box end-->
+            <div class="fix"></div>
+          </li>
+        <%end%>
+        </ul>
+    <div class="fix"></div>
+    </div><!-- listing end -->
+    <div class="fix"></div>
+  </div><!-- LI padding end -->
+</li>
 
 <%end%>
+</ul><!--message board ul end-->
 
+
+
+
+      

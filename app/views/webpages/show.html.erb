@@ -1,19 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-  <b>Web Page:</b>
-  <%= link_to @webpage.title, @webpage.url %>
-<br />
-  <b>Started by:</b>
-  <%=link_to @webpage.user.username, @webpage.user %>
-<div>
-  <b>Allow discussion?:</b>
-  <%= @webpage.active %>
-  <b>Discussion count: </b>
-  <%= @webpage.discussions.count%>
-</div>
 <div id="discussionform">
   <%=render 'discussions/form'%>
 </div>
-<div id="discussionsection">
-  <%=render 'discussions'%>
-</div>
+
+<div id="sub-parent">
+  <!-- ####### flyout ######## -->
+  <div id="flyout">
+    <div class="flyout-padding">
+      <div id="flyout-expand"></div>
+      <div id="flyout-minus"></div>
+    </div><!--####### flyout-padding end ######-->
+  </div><!-- ####### flyout end ######## -->
+  
+  <div class="messageboard-container">
+    <%=render 'discussions'%>
+    
+  </div><!-- messageboard-container end -->
+  <div class="fix"></div>
+</div><!--sub parent end-->

@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.6'
 gem 'therubyracer'
 gem 'rb-readline' # good for rails console can be commented out when go live
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

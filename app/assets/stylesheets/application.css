@@ -9,38 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ * require_tree .  #application wise style only
+ *= require googlefont
  */
-#container{
-    width: 380px;
-    background: lightgrey;
-    padding: 20px;
-    
-}
-#discussionsection{
-    width: 360px;
-    padding: 10px;
-    background: #B0B0B0;
-}
-.discusitem{
-    
-    width: 400px;
-    margin: 4px;
-}
-.commentsection{
-    
-}
-.commentitem{
-    
-    padding-left: 20px;
-    margin: 4px;
-}
-.followlk{
-    display: inline;
-}
-.followlk a,a:hover{
-    text-decoration: none;
-}
-.chk_boxs{
-    display: inline;
-}

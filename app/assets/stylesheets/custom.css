@@ -1,0 +1,581 @@
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/********************css reset file end********************/
+
+
+.fix {
+clear: both;
+}
+
+body {
+background-color: #ddd;
+}
+
+#sidebar {
+width: 350px;
+background-color: #ccc;
+
+overflow:hidden;
+position: relative;
+-moz-box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.05);
+-webkit-box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.05);
+box-shadow: 0px 0px 8px 8px rgba(0,0,0,0.05);
+border-left: 1px solid #aaa;
+}
+
+#sidebar #header {
+width: auto;
+height: 72px;
+background-image: url('header-bg.jpg');
+background-repeat: repeat-x;
+}
+
+.header-padding {
+padding-left: 10px;
+}
+
+#sidebar #content {
+width: auto;
+background-color: limegreen;
+/*overflow: scroll;
+overflow-x:hidden;*/
+}
+
+/* ------------ PROFILE ---------- */
+.profile {
+width: 350px;
+background-color: #999;
+border-bottom: 1px solid #777;
+border-top: 1px solid #bbb;
+}
+
+.profile-padding {
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+.profileText {
+width: 290px;
+float: right;
+
+}
+
+
+.profileText h3 {
+font-family: 'Open Sans', sans-serif;
+font-size: 14px;
+padding-bottom: 5px;
+font-weight: bold;
+text-transform: uppercase;
+color: #333;
+text-shadow: 1px 1px rgba(255,255,255,.3);
+}
+
+.profileText p, .profileText p a {
+font-family: 'Open Sans', sans-serif;
+font-size: 11px;
+font-weight: bold;
+text-transform: uppercase;
+color: #333;
+padding-bottom: 5px;
+}
+
+.profileBox {
+float: left;
+width: 40px;
+height: 40px;
+margin-right: 10px;
+margin-left: 10px;
+position: relative;
+}
+
+.profileBox img {
+width: 40px;
+height: 40px;
+border: 1px solid black;
+border-radius: 5px;
+}
+
+/* ------------------ START A DISCUSSION ------------ */
+
+#sidebar #content .discussion-box {
+width: auto;
+min-height: 20px;
+line-height: 20px;
+background-image: url('gray-bg.jpg');
+background-repeat: repeat-x;
+background-position: bottom;
+background-color: #868686;
+border-top: 1px solid #aaa;
+border-bottom: 1px solid #666;
+}
+
+#sidebar #content .discussion-padding {
+padding: 10px;
+}
+
+#sidebar #content .discussion-box a {
+font-size: 14px;
+font-family: 'Open Sans', sans-serif;
+font-weight: bold;
+text-transform: uppercase;
+color: #FECD6E;
+text-decoration: none;
+text-shadow: 1px 1px #777;
+display: block;
+margin-left: 20px;
+cursor: pointer;
+/*background-color: pink;*/
+}
+
+
+
+#sidebar #content .discussion-box #new_discussion {
+margin-top: 10px;
+display: none;
+}
+
+#new_discussion textarea {
+width: 270px;
+}
+
+#new_discussion .title {
+width: 270px;
+}
+
+#new_discussion #submitBtn {
+width: 70px;
+height: 30px;
+line-height: 30px;
+background-image: url('header-bg.jpg');
+background-repeat: repeat-x;
+border: 0px;
+font-family: 'Open Sans', sans-serif;
+text-transform: uppercase;
+font-weight: bold;
+font-size: 14px;
+color: white;
+text-shadow: 1px 1px rgba(0,0,0,.5);
+box-shadow: 1px 1px rgba(0,0,0,.2);
+}
+
+span.arrow {
+background-image: url('ui-icons-white.png');
+background-position: -49px -190px;
+width: 15px;
+height: 18px;
+position: absolute;
+}
+
+
+#sub-parent {
+/*background-color: yellow;*/
+position: relative;
+height: 400px;
+}
+
+.messageboard-container {
+width: 3000px;
+overflow: scroll;
+/*overflow-x: hidden;*/
+}
+
+
+/* --------- FLYOUT BOX ------------ */
+#flyout {
+width: 30px;
+min-height: 400px;
+position: absolute;
+top: 0px;
+right: 0px;
+z-index: 500;
+text-align: center;
+background-color: #EEE;
+-moz-box-shadow: -5px 0px 5px rgba(0,0,0,.05);
+-webkit-box-shadow: -5px 0px 5px rgba(0,0,0,.05);
+box-shadow: -5px 0px 5px rgba(0,0,0,.05);
+border-left: 1px solid #aaa;
+}
+
+.flyout-padding {
+padding-top: 10px;
+}
+
+#flyout-expand {
+cursor: pointer;
+width: 12px;
+height: 12px;
+position: absolute;
+top: 10px;
+left: 5px;
+/*background-color: red;*/
+background-image: url('ui-icons.png');
+background-position: -2px -194px;
+}
+
+#flyout-minus {
+/*background-color: green;*/
+cursor: pointer;
+width: 14px;
+height: 15px;
+position: absolute;
+top: 10px;
+left: 5px;
+/*background-color: red;*/
+background-repeat: no-repeat;
+background-image: url('ui-icons.png');
+background-position: -17px -194px;
+}
+
+/* ----------- MESSAGE BOARD STYLES --------- */
+
+#content ul#messageboard {
+list-style: none;
+position: relative;
+overflow: scroll;
+height: 400px;
+background-color: pink;
+width: 320px;
+}
+
+#content ul#messageboard li {
+width: 320px;
+/*min-height: 50px;*/
+/*line-height: 30px;*/
+height: auto;
+padding-top: 10px;
+padding-bottom: 10px;
+text-shadow: 1px 1px #777;
+/*padding-left: 10px;*/
+color: #eee;
+background-color: #999;
+border-bottom: 1px solid #777;
+border-top: 1px solid #bbb;
+position: relative;
+display: block;
+}
+
+#content ul#messageboard li .messageboard-padding {
+padding: 0px;
+}
+
+
+#sidebar #content ul li:hover {
+background-color: #aaa;
+}
+
+#sidebar #content ul ul {
+z-index: 400;
+background-color: orange;
+}
+
+.listingBox {
+width: auto;
+}
+
+.listingBox span.commentNum {
+cursor: pointer;
+margin-left: 5px;
+margin-right: 20px;
+float: right;
+padding: 0.1em .65em;
+font-size: 0.751em;
+border: 2px solid white;
+box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+-webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+-o-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+color: white;
+background: #CA5661;
+background: -webkit-gradient(linear, left top, left bottom, from(#CA5661), to(#BC424E));
+background: -webkit-linear-gradient(#CA5661, #BC424E);
+background: -moz-linear-gradient(center top, #CA5661 0%, #BC424E 100%);
+background: -moz-gradient(center top, #CA5661 0%, #BC424E 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ca5661,endColorstr=#bc424e);
+-ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#ca5661, endColorstr=#bc424e)";
+text-shadow: 0 1px 0 #A8343F;
+}
+
+.listingBox h2 {
+font-family: Arial;
+font-size: 16px;
+line-height: 20px;
+color: white;
+font-weight: bold;
+padding-bottom: 7px;
+padding-top: 2px;
+/*padding-left: 10px;*/
+margin-left: 10px;
+font-family: Arial;
+font-size: 14px;
+font-weight: bold;
+color: white;
+display: block;
+}
+
+.msgContent {
+width: 210px;
+min-height: 50px;
+/*background-color: orange;*/
+float: left;
+}
+
+.listingBox .msgContent h3 {
+font-family: Arial;
+font-size: 11px;
+text-transform: uppercase;
+color: #333;
+padding-bottom: 5px;
+}
+
+.listingBox .msgContent h3 span.timestamp {
+float: right;
+font-weight: normal;
+margin-right: 2px;
+color: #666;
+font-size: 10px;
+}
+
+.listingBox .msgContent p {
+font-family: Arial;
+font-size: 12px;
+font-weight: bold;
+color: white;
+padding-bottom: 5px;
+}
+
+.listingBox .msgContent p.readMore {
+color: #FECD6E;
+}
+
+.listingBox .msgContent p.readMore a {
+font-size: 10px;
+font-weight: bold;
+color: #FECD6E;
+text-transform: uppercase;
+text-decoration: none;
+}
+
+.listingBox .msgContent p.readMore a:hover {
+text-decoration: underline;
+}
+
+#sidebar #content ul#messageboard ul {
+display: none;
+width: 258px;
+margin-left: 20px;
+overflow: hidden;
+/*background-color: pink;*/
+}
+
+#sidebar #content ul#messageboard ul li {
+width: 248px;
+border: 0px;
+padding-left: 0px;
+margin: 0px;
+background-color: #aaa;
+border-bottom: 1px dotted #bbb;
+/*background-color: pink;*/
+padding-left: 10px;
+}
+
+#sidebar #content ul#messageboard ul li .listingBox {
+width: 258px;
+margin: 0px;
+}
+
+#sidebar #content ul#messageboard ul li .msgContent {
+width: 200px;
+/*background-color: limegreen;*/
+margin: 0px;
+}
+
+
+#sidebar #content ul#messageboard ul li .profileBox {
+margin: 0px;
+margin-right: 10px;
+}
+
+
+#sidebar #content .list-header {
+width: auto;
+min-height: 20px;
+line-height: 20px;
+background-color: #888;
+border-top: 1px solid #aaa;
+border-bottom: 1px solid #666;
+padding-left: 10px;
+padding-top: 4px;
+}
+
+#sidebar #content .list-header a {
+font-size: 12px;
+font-family: Arial;
+font-weight: bold;
+text-transform: uppercase;
+color: #FECD6E;
+text-decoration: none;
+text-shadow: 1px 1px #777;
+display: block;
+/*background-color: pink;*/
+}
+
+
+
+#sidebar #content .list-header #new_discussion {
+margin-top: 10px;
+display: none;
+}
+
+
+#big-box {
+position: absolute;
+top: 0;
+left: 0;
+background-color: navy;
+z-index: 500;
+display: none;
+}
+
+#small-box {
+width: 350px;
+min-height: 600px;
+margin: 0px auto;
+color: black;
+background-color: white;
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+-o-border-radius: 10px;
+}
+
+#small-box-padding {
+padding: 20px;
+}
+
+.messageboard-container {
+width: 320px;
+overflow: scroll;
+overflow-x: hidden;
+}
+
+
+/* ----------- ADVERTISEMENT BOX ------ */
+#advertisements {
+width: 285px;
+height: 130px;
+
+background-image: url('gradient_bg.jpg');
+background-repeat: repeat-x;
+background-position: bottom;
+background-color: white;
+border: 1px solid #aaa;
+position: absolute;
+bottom: 15px;
+left: 15px;
+box-shadow: 0px 0px 5px 5px rgba(0,0,0,.05);
+z-index: 400;
+}
+/* ----------------------- */
+
+
