@@ -129,7 +129,8 @@ $(document).ready(function(){
     	})
     	.focusout(function() {
         	if ( this.value == '' ) {
-            	this.value = $(this).data('default');    
+            	this.value = $(this).data('default');
+                 
         	}
         	
 		});
@@ -145,11 +146,29 @@ $(document).ready(function(){
     	})
     	.focusout(function() {
         	if ( this.value == '' ) {
-            	this.value = $(this).data('default');    
+            	this.value = $(this).data('default');
+                
         	}
         	
 		});
 	
+        jQuery(".un").each(function() { // for username field in login page
+        	jQuery(this).data('default', this.value);
+    	})
+    	.focusin(function() {
+        	if ( this.value == $(this).data('default') ) {
+            	this.value = '';    
+        	}
+        	jQuery(this).css("color", "black");
+    	})
+    	.focusout(function() {
+        	if ( this.value == '' ) {
+            	this.value = $(this).data('default');
+            	jQuery(this).css("color", "gray");    
+        	}
+		});
+        
+        
 		
 	
 	
@@ -158,12 +177,20 @@ $(document).ready(function(){
 		childNum = jQuery(this).find("li").size();
 		// alert(childNum);
 		childNumCombo = '<span class="commentNum">' + childNum + '</span>';
-		jQuery(this).parents("li").find("h2").prepend(childNumCombo).click(function() {
+		jQuery(this).parents("li").find("h2").prepend(childNumCombo);
+                $(this).parents("li").click(function(){
+                    //alert("clicked!");
+                    $(this).find("ul").slideToggle("fast");
+                    $(this).find(".expandBox").toggleClass("minus");
+                    })
+                
+                /* changed made by Bin, clicking on anywhere in the discussion will open the discussion.
+                        jQuery(this).parents("li").click(function() {
 			// alert("clicked!");
 			jQuery(this).parents("li").find("ul").slideToggle("fast");
 			//jQuery("#advertisements").toggle();
 			jQuery(this).parents("li").find(".expandBox").toggleClass("minus");
-		});
+                        });*/
 	});
 	
 	jQuery("#flyout-expand").click(function(event) {

@@ -137,8 +137,8 @@ padding-left: 10px;
 
 #sidebar #content {
 width: auto;
-background-color: limegreen;
-/*overflow: scroll;
+/*background-color: limegreen;
+overflow: scroll;
 overflow-x:hidden;*/
 }
 
@@ -276,9 +276,9 @@ height: 400px;
 }
 
 .messageboard-container {
-width: 3000px;
+width: 320px;
 overflow: scroll;
-/*overflow-x: hidden;*/
+overflow-x: hidden;
 }
 
 
@@ -334,9 +334,10 @@ background-position: -17px -194px;
 list-style: none;
 position: relative;
 overflow: scroll;
-height: 400px;
+height: 300px;
 background-color: pink;
 width: 320px;
+overflow-x:hidden;
 }
 
 #content ul#messageboard li {
@@ -555,8 +556,8 @@ padding: 20px;
 
 .messageboard-container {
 width: 320px;
-overflow: scroll;
-overflow-x: hidden;
+overflow:hidden;
+
 }
 
 
@@ -578,4 +579,108 @@ z-index: 400;
 }
 /* ----------------------- */
 
+/*login page starts*/
+
+.welcomeHeader{
+height: 72px;
+width:350px;
+background-image: url('images/header-bg.jpg');
+background-repeat: repeat-x;
+}
+
+.welcomeHeader-padding {
+	padding-left: 10px;
+}
+
+.loginBox {
+width: 350px;
+background-image: url('bg-gray.gif');
+background-repeat: repeat-x;
+background-color: #e5e5e5;
+}
+
+.loginBox .form-padding {
+padding: 10px 60px 10px 10px;
+}
+
+.loginBox h1 {
+	font-size:18px;
+	line-height: 24px;
+	font-family: Arial;
+	font-weight: bold;
+	color: #333;
+	text-shadow: 1px 1px 1px white;
+	}
+
+.loginBox p {
+font-family: Arial;
+font-size: 14px;
+line-height: 14px;
+font-weight: bold;
+text-shadow: 1px 1px 1px white;
+color: #424242;
+display: block;
+padding-top: 5px;
+padding-bottom: 5px;
+}
+
+.loginBox textarea {
+border: 1px solid #aaa;
+line-height: 30px;
+
+}
+
+.loginBox input#submit {
+background-image: url('bg-orange.gif');
+background-repeat: repeat-x;
+background-color: #f7931d;
+color: white;
+padding: 5px;
+margin: 0px;
+font-size: 14px;
+font-weight: bold;
+float: right;
+margin-top: 5px;
+border: 1px solid #999;
+}
+
+#input-text {
+height: 30px;
+font-size: 14px;
+color: grey;
+width: 185px;
+}
+#pwd {
+height: 30px;
+font-size: 14px;
+width: 185px;
+}
+
+.loginBox p.extra {
+font-size: 12px;
+font-style: italic;
+padding-top: 3px;
+padding-left: 3px;
+}
+
+#loginTable {
+margin-top: 20px;
+padding-bottom: 10px;
+border-top: 1px dotted #aaa;
+border-bottom: 1px dotted #aaa;
+background-color: #ddd;
+width: 300px;
+}
+
+#loginTable td {
+height: 50px;
+/*background-color: red;*/
+/*border-bottom: 1px solid white;*/
+padding-top: 10px;
+padding-bottom: 10px;
+line-height: 50px;
+/*background-color: pink;*/
+}
+
+/*login page css end*/
 

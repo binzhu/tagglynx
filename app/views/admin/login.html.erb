@@ -1,7 +1,43 @@
-<%=alert%>
-<%= form_tag do %>
-  <h1>Please Login</h1>
-  <div>Username: <%= text_field_tag :username %></div>
-  <div>Password: <%= password_field_tag :pwd %></div>
-  <div><%= submit_tag "Login" %></div>
-<%end%>
+
+  
+<div class="loginBox">
+  <div class="form-padding">
+    <h1>Please Log In</h1>
+    <p>Haven't registered yet? <%=link_to 'register','/users/register' %></p>
+      <%= form_tag '/admin/login', :id=>'login' do %>
+      <%=alert%>
+        <table id="loginTable">
+        <tr>
+	<td width="10"></td>
+	<td>
+	<p>Log in ID</p>
+	</td>
+	<td>
+          <%= text_field_tag :username, "your email or username", :class => "un",  :id=>"input-text" %>
+        <p class="extra"><a href="#">I forgot my log in ID</a></p>
+	</td>
+	<td width="10"></td>
+	</tr>
+	<tr>
+	<td width="10"></td>
+	<td>
+	<p>Password</p>
+	</td>
+	<td>
+         <%= password_field_tag :pwd%>
+         <p class="extra"><a href="#">I forgot my password</a></p>
+	</td>
+	<td width="10"></td>
+	</tr>
+	<tr>
+	<td width="10"></td>
+	<td></td>
+	<td>
+         <%= submit_tag "Sign in", :id => "submit" %>
+         </td>
+	<td width="10"></td>
+	</tr>
+        </table>
+      <%end%>
+  </div><!--form-padding ends-->
+</div><!--loginBox ends-->
