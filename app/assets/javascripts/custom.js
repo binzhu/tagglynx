@@ -2,10 +2,21 @@ $(document).ready(function(){
     /*###########start of comment page js############*/
 	// alert("loaded!");
         
+        
+        
+        
         if ($('#messageboard-container').length > 0){
-            //alert("loaded");
-            $(this).hide();
+            alert(" message page loaded");
+            //alert($('div#sidebar').id);
         }
+        
+        
+        $('.followlkclass').find("a").click(function(){
+            //alert("clicked!");
+            //functionality is made through ajax request, here just adjust the view
+            $(this).parent().html("followed");
+        })
+        
         
 	var windowHeight;
 	var windowWidth;
@@ -177,11 +188,10 @@ $(document).ready(function(){
 		childNum = jQuery(this).find("li").size();
 		// alert(childNum);
 		childNumCombo = '<span class="commentNum">' + childNum + '</span>';
-		jQuery(this).parents("li").find("h2").prepend(childNumCombo);
-                $(this).parents("li").click(function(){
-                    //alert("clicked!");
-                    $(this).find("ul").slideToggle("fast");
-                    $(this).find(".expandBox").toggleClass("minus");
+		jQuery(this).parents("li").find("h2").prepend(childNumCombo).click(function() {
+			jQuery(this).parents("li").find("ul").slideToggle("fast");
+			//jQuery("#advertisements").toggle();
+			jQuery(this).parents("li").find(".expandBox").toggleClass("minus");
                     })
                 
                 /* changed made by Bin, clicking on anywhere in the discussion will open the discussion.
@@ -193,6 +203,17 @@ $(document).ready(function(){
                         });*/
 	});
 	
+        /* fill comment box with user id */
+        $('li.commentitem').find("a.replylink").click(function(){
+            //alert(this.parents("li"));
+            //alert("div.username #"+this.id);
+            //alert($("div.username #33").val());
+            //$(this).parents("ul").attr("id")) // selected the parent ul
+            
+            
+            });
+        
+        
 	jQuery("#flyout-expand").click(function(event) {
 		event.preventDefault();
 		jQuery(this).parents("#flyout").animate({

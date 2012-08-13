@@ -61,7 +61,7 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'Automatically logged in' }
         format.json { render json: @user, status: :created, location: @user }
       else
-        format.html { render action: "new" }
+        format.html { render action: "register" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end

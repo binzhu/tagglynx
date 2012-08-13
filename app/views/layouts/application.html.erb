@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  
 <div id="sidebar">
   <div id="header">
       <div class="header-padding">
@@ -36,11 +37,14 @@
 
   </div><!--content end-->
   <div class="fix"></div>
+  <%if  params[:controller] == "webpages" && params[:action] == "show"%>
   <div id="advertisements">
     Ad
   </div><!-- advertisement end -->
   <div class="fix"></div>
+  <%end%>
 </div><!--sidebar end-->
+
 </body>
 </html>
 

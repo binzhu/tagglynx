@@ -7,10 +7,15 @@ class User < ActiveRecord::Base
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "50x50>" },
                     :url  => "/assets/useravatar/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/useravatar/:id/:style/:basename.:extension"
-  def email_confirmation
-  end
-  def pwd_confirmation
-  end
+                    
+  validates_uniqueness_of :username
+  validates_presence_of :username
+  validates_uniqueness_of :email
+  validates_confirmation_of :email
+  validates_confirmation_of :pwd
+  
+  
+
   
   def followers
     Friend.find_all_by_followee_id(id).map{ |f| f.follower}

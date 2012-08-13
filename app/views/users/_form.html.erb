@@ -11,60 +11,50 @@
     </div>
   <% end %>
   <%if params[:action] == 'edit' %>
-    Username: <%=@user.username%>
+    <p>Username: <%=@user.username%></p>
   <%end%>
-    <div class="field">
-    <%= f.label :avatar %><br />
+  
+<p><label>Profile Image</label><br />
     <%= f.file_field :avatar %>
-  </div>
-  <div class="field">
-    <%= f.label :fname %><br />
+
+    
+<p><label>First Name</label><br />
+
     <%= f.text_field :fname %>
-  </div>
-  <div class="field">
-    <%= f.label :lname %><br />
+
+<p><label>Last Name</label><br />
     <%= f.text_field :lname %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
+
+<p><label>Your Email</label><br />
     <%= f.text_field :email %>
-  </div>
-<%if params[:action] == 'register' %>
-  <div class="field">
-    <%= f.label :email_confirmation %><br />
+
+<%if params[:action] == 'register' || params[:action] == 'create'%>
+<p><label>Re-type Email</label><br />
     <%= f.text_field :email_confirmation %>
-  </div>
-  <div class="field">
-    <%= f.label :username %><br />
+
+  <p><label>Username</label><br />
     <%= f.text_field :username %>
-  </div>
-  <div class="field">
-    <%= f.label :pwd %><br />
+
+  <p><label>Password</label><br />
     <%= f.password_field :pwd %>
-  </div>
-  <div class="field">
-    <%= f.label :pwd_confirmation %><br />
+
+  <p><label>Password Confirmation</label><br />
     <%= f.password_field :pwd_confirmation %>
-  </div>
+
 <%end%>
-  <div class="field">
-    <%= f.label :country %><br />
+<p><label>Country</label>
     <%=f.select(:country, [['USA',1],['China', 2]]) %>
-  </div>
-  <div class="field">
-    <%= f.label :postal %><br />
-    <%= f.text_field :postal %>
-  </div>
-  <div class="field">
-    <%= f.label :gender %><br />
+
+  <p><label>Postal Code</label><br />
+    <%= f.text_field :postal, :size => "10" %>
+  
+  <p><label>Gender</label>
     <%= f.select(:gender,[['male',1],['female',2],['neutral',3],['both',4]]) %>
-  </div>
-  <div class="field">
-    <%= f.label :dob %><br />
-    <%= f.date_select :dob %>
-  </div>
+  <p><label>Date of Birth</label><br />
+    <%= f.date_select :dob %><br />
+
 By clicking Sign Up, you agree to our <%=link_to 'Terms.' %>
   <div class="actions">
-    <%= f.submit 'SIGN UP' %>
+    <%= f.submit 'SIGN UP',  :class=>"submitBtn" %>
   </div>
 <% end %>

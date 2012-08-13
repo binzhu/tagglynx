@@ -44,7 +44,9 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to(:back, notice: 'Comment was successfully created.') }
+        #@comments = Comment.find_all_by_discussion_id(@comment.discussion_id).sort_by{|c| c.created_at}.reverse
+        format.html { redirect_to(:back) }
+        format.js
         format.json { render json: @comment, status: :created, location: @comment }
       else
         format.html { render action: "new" }

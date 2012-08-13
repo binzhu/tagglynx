@@ -18,12 +18,13 @@
     <%= f.text_area :title, :class => "txt1", :size => "40x1", :value => "Insert Title Here..."%>
     <%= f.text_area :content, :class => "txt2", :size => "40x4", :value => "Type your discussion..." %>
 
-
+  <br />
+  <%if false%>
     <%= f.label :active %>
     <%= f.check_box :active %>
     <%= f.label :sticky %>
     <%= f.check_box :sticky %>
-
+  <%end %>
   <div class="actions">
     <%= f.submit "Submit", :id=>'submitBtn' %>
   </div>

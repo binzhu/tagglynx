@@ -44,7 +44,7 @@ class DiscussionsController < ApplicationController
       @discussion.user_id = session[:user_id]
     respond_to do |format|
       if @discussion.save
-        format.html { redirect_to @discussion, notice: 'Discussion was successfully created.' }
+        format.html { redirect_to(:back) }
         format.json { render json: @discussion, status: :created, location: @discussion }
       else
         format.html { render action: "new" }
