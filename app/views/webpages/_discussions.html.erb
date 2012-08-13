@@ -3,7 +3,7 @@
 <%discussions.each do |d|%>
 <li>
   <div class="messageboard-padding">
-    <div class="listingBox">
+    <div class="listingBox" id="<%=d.id%>">
       <div class="expandBox"></div>
         <h2><%= d.title%></h2>
         <div class="profileBox">
@@ -19,9 +19,9 @@
         <div class="commentform">
           <%=render :partial=>"comments/form", :locals => { :did => d.id }  %>
         </div>
-        <%comments = d.comments.all.sort_by { |c| c[:created_at] }.reverse%>
+        <%@comments = d.comments.all.sort_by { |c| c[:created_at] }.reverse%>
         <div class="commentlist">
-          <%=render :partial=>'comments/comments', :locals => {:comments => comments}%>
+          <%=render @comments%>
         </div>
         </ul>
     <div class="fix"></div>

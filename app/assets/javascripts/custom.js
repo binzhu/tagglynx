@@ -17,6 +17,11 @@ $(document).ready(function(){
             $(this).parent().html("followed");
         })
         
+        //button to dismiss notifications
+        $('a.msgDismiss').click(function(){
+            alert("clicked");
+        })
+        
         
 	var windowHeight;
 	var windowWidth;

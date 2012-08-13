@@ -560,6 +560,14 @@ width: 320px;
 overflow:hidden;
 
 }
+
+/*announcement*/
+#announcement{
+    height: 30px;
+    background: yellow;
+    font-size: 12px;
+}
+/*announcement end*/
 /*############## style of comment form ##############*/
 #commentform input{
     float: right;

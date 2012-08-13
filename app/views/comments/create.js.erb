@@ -1,0 +1,11 @@
+$("ul#<%=@comment.discussion_id%>.listingBox").prepend("<%= escape_javascript render(@comment) %>");
+//alert("inserted");
+
+var ancmtStr = '<div>Your friend ' + "<%=@comment.user.username%>" + ' posted comments at<a href="<%=@comment.discussion.webpage.url%>">' + "<%=@comment.discussion.webpage.title%>" + '</a>';
+ancmtStr = ancmtStr + '<a href="#" class="msgDismiss">x</a>' + '</div>'
+<%broadcast "/friendpost" do %>
+$('#announcement').append('<div>Your friend ' + "<%=@comment.user.username%>" + ' posted comments at<br /><a href="<%=@comment.discussion.webpage.url%>">' + "<%=@comment.discussion.webpage.title%>" + '</a>'+ '<a href="#" class="msgDismiss">x</a>' + '</div>');
+//setTimeout(function(){ $('#announcement').html("")},3000);
+//timeout function can control the notification to live for a short time only
+<%end%>
+//alert("ancmtd!");

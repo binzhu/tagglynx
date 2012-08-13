@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-  <%= image_tag @user.avatar.url(:thumb) %>
+  <%= useravatar @user %>
 
 <p>
   <b>Username:</b>
@@ -55,3 +55,18 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<div id="followers">
+  <%if @user.followers.count > 0%>
+    You have some followers
+  <%end%>
+</div>
+<div id="followees">
+  <%if @user.followees.count > 0%>
+    You are following 
+    <% @user.followees.each do |fe|%>
+    <div>
+      <%=useravatar(fe)%><%=link_to fe.username, fe%>
+    </div>
+    <%end%>
+  <%end%>
+</div>

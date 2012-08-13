@@ -9,7 +9,7 @@ module UsersHelper
     if !user.avatar_file_name.nil?
       image_tag user.avatar.url(:thumb)
     else
-      image_tag 'default_avatar.jpg'
+      image_tag 'default_avatar.jpg', :size=>"50x50"
     end
     
   end

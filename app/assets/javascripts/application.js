@@ -15,3 +15,24 @@
 //= require jquery_ujs
 
 
+$(document).ready(function(){
+    //alert("app js loaded");
+if ($('.messageboard-container').length > 0)  {    
+    //alert("message page loaded");
+    // only open push notification on this page, for now
+    var followeeIds = {};
+    
+    var faye = new Faye.Client('http://localhost:9292/faye');
+    faye.subscribe("/friendpost", function(data) {
+    //alert(data);
+    //$('#announcement').text("friend posting comments");
+    eval(data);
+    //alert(data);
+    });
+    
+    
+    
+    
+}
+    
+})

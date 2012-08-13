@@ -3,7 +3,7 @@
 <head>
   <title>Tagglynx</title>
   <%= stylesheet_link_tag    "application","custom","googlefont" %>
-  <%= javascript_include_tag "application","custom"  %>
+  <%= javascript_include_tag  "http://localhost:9292/faye.js" ,"application","custom"  %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -17,7 +17,7 @@
   
   <div id="currentpage"></div>
 
-  <div class="announcement"></div>
+  <div id="announcement"></div>
   
   <div id="content">
     <% if !session[:user_id].nil? %>
