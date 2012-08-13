@@ -16,11 +16,7 @@ $(document).ready(function(){
             //functionality is made through ajax request, here just adjust the view
             $(this).parent().html("followed");
         })
-        
-        //button to dismiss notifications
-        $('a.msgDismiss').click(function(){
-            alert("clicked");
-        })
+
         
         
 	var windowHeight;

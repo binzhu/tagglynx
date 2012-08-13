@@ -563,9 +563,10 @@ overflow:hidden;
 
 /*announcement*/
 #announcement{
-    height: 30px;
-    background: yellow;
+    height: 0px;
+    background: lightgrey;
     font-size: 12px;
+    line-height: 15px;
 }
 /*announcement end*/
 /*############## style of comment form ##############*/
