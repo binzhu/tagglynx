@@ -17,7 +17,7 @@
 
 $(document).ready(function(){
     //alert("app js loaded");
-    serverbase = "http://localhost:3000"
+    localserver = "http://localhost:3000"
     rackspaceserver= "http://198.101.236.20:3000"
     
     localfaye = 'http://localhost:9292/faye'
@@ -29,9 +29,7 @@ $(document).ready(function(){
 if ($('.messageboard-container').length > 0)  {    
     //alert("message page loaded");
     // only open push notification on this page, for now
-    
-    
-    
+
     
     //ajax call to subscribe to followee's channel
     $.ajax({type:"get",
@@ -47,8 +45,8 @@ if ($('.messageboard-container').length > 0)  {
                     faye.subscribe("/friendpost/" + data[i], function(data) {
                     //alert(data);
                     //$('#announcement').text("friend posting comments");
-                    eval(data);
-                    //alert(data);
+                    //eval(data);
+                    alert(data);
                     });
                     //end of code to subscribe to friends faye channel
                 //Do something
