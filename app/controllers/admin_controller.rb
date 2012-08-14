@@ -8,8 +8,8 @@ class AdminController < ApplicationController
           rackspaceserver = 'http://198.101.236.20:3000'
           
         if session[:url].nil? || session[:title].nil?
-          redirect_to rackspaceserver
-          return
+          redirect_to rackspaceserver # if this happens, session of url could not be set because no params is passed to index
+          return                      # by default this should not happen since iframe is always loaded from when there is page open
         else
           redirect_to rackspaceserver + '?url='+session[:url] + '&title=' + session[:title]
           return

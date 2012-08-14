@@ -8,16 +8,19 @@ class WebpagesController < ApplicationController
           @pg = Webpage.new(:url => params[:url],
                            :user_id => session[:user_id],
                            :title => params[:title])
+          @pg.save!
           session[:url]=@pg.url
+          puts "crt_url is" + session[:url]
           redirect_to @pg
           return
         else
           session[:url]=crt_pg.url
+          puts "crt_url is" + session[:url]
           redirect_to crt_pg
           return
         end
     end
-        
+
 
     @webpages = Webpage.all
 
@@ -35,6 +38,8 @@ class WebpagesController < ApplicationController
     @discussion = Discussion.new
     @comment = Comment.new
     respond_to do |format|
+          session[:url]=@webpage.url
+          puts "crt_url is" + session[:url]      
       format.html # show.html.erb
       format.json { render json: @webpage }
     end
