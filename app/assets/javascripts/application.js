@@ -45,8 +45,8 @@ if ($('.messageboard-container').length > 0)  {
                     faye.subscribe("/friendpost/" + data[i], function(data) {
                     //alert(data);
                     //$('#announcement').text("friend posting comments");
-                    //eval(data);
-                    alert(data);
+                    eval(data);
+                    //alert(data);
                     });
                     //end of code to subscribe to friends faye channel
                 //Do something
