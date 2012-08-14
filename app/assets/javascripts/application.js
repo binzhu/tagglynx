@@ -37,7 +37,7 @@ if ($('.messageboard-container').length > 0)  {
                 //alert(data[i]);
                     //code to subscribe to friends channel
                     //console.log("/friendpost/" + data[i]);
-                    var faye = new Faye.Client('http://localhost:33909/faye');
+                    var faye = new Faye.Client('http://localhost:9292/faye');
                     faye.subscribe("/friendpost/" + data[i], function(data) {
                     //alert(data);
                     //$('#announcement').text("friend posting comments");
