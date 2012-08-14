@@ -8,9 +8,11 @@ class WebpagesController < ApplicationController
           @pg = Webpage.new(:url => params[:url],
                            :user_id => session[:user_id],
                            :title => params[:title])
+          session[:url]=@pg.url
           redirect_to @pg
           return
         else
+          session[:url]=crt_pg.url
           redirect_to crt_pg
           return
         end
