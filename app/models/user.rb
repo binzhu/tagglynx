@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :discussions
   has_many :comments
   has_many :friends
+  has_many :users_announcements
   has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "50x50>" },
                     :url  => "/assets/useravatar/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/assets/useravatar/:id/:style/:basename.:extension"

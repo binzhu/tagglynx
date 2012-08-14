@@ -9,6 +9,16 @@ class UsersController < ApplicationController
     end
   end
   
+  def getfollowees
+    if !session[:user_id].nil?
+      @followees = User.find(session[:user_id]).followees.map{|fle| fle.username }
+      respond_to do |format|
+        format.json{render json: @followees.to_json}
+      end
+    end
+  end
+  
+  
   # GET /users
   # GET /users.json
   def index

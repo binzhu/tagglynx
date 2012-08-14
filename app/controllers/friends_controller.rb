@@ -1,11 +1,21 @@
 class FriendsController < ApplicationController
+
+  def unfollow
+    if !params[:fid].nil?
+      if !session[:user_id].nil?
+        f = Friend.find(:first,:conditions =>["follower_id = ? AND followee_id = ?", session[:user_id],params[:fid]])
+        f.destroy
+        redirect_to(:back)
+      end
+    end
+  end
   
   def follow
-    if !params[:id].nil?
+    if !params[:fid].nil?
       if !session[:user_id].nil?
         Friend.create(
           :follower_id => session[:user_id],
-          :followee_id => params[:id]
+          :followee_id => params[:fid]
         )
         redirect_to(:back)
       end
@@ -54,7 +64,13 @@ class FriendsController < ApplicationController
   # POST /friends.json
   def create
     @friend = Friend.new(params[:friend])
-
+    
+    #prevent multiple following 
+    #followings = Friend.find_all_by_follower_id(session[:user_id])
+    #if followings.include?(@friend)
+    #  return false
+    #end
+    
     respond_to do |format|
       if @friend.save
         format.html { redirect_to @friend, notice: 'Friend was successfully created.' }

@@ -2,7 +2,7 @@
           <li class="commentitem" id="<%=comment.user_id%>">
             <div class="listingBox">
               <div class="profileBox"><%=useravatar(comment.user)%></div>
-              <div class="msgContent"><h3><div class="username" id="<%=comment.user.id%>" style="display: inline"><div style="display: inline;"><%=comment.user.username%></div>  <%=followlk(comment)%></div> <span class="timestamp">2 min</span></h3>
+              <div class="msgContent"><h3><div class="username" id="<%=comment.user.id%>" style="display: inline"><div style="display: inline;"><%=comment.user.username%></div><div style="display: inline;" class="followlkclass" ><%=followlk(comment)%></div></div> <span class="timestamp">2 min</span></h3>
                 <p><%=comment.content%></p>
                 <p class="readMore"><a href="#" id="<%=comment.id%>" class="replylink">&laquo; Reply</a></p>
               </div><!--msgContent end-->

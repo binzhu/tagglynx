@@ -44,6 +44,14 @@ class AnnouncementsController < ApplicationController
 
     respond_to do |format|
       if @announcement.save
+        
+          uids = User.all.map{|u| u.id}
+          uids.each do |uid|
+            UsersAnnouncement.create(
+              :user_id => uid,
+              :announcement_id => @announcement.id
+            )
+          end        
         format.html { redirect_to @announcement, notice: 'Announcement was successfully created.' }
         format.json { render json: @announcement, status: :created, location: @announcement }
       else

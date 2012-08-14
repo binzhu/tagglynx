@@ -1,7 +1,9 @@
 module UsersHelper
   def followlk(obj)
     if !User.find(session[:user_id]).followees.include?(obj.user) && User.find(session[:user_id]) != obj.user
-      link_to 'follow', {:controller => 'friends', :action => 'follow', :id=>obj.user.id}, :remote => true, :class =>'followlk'
+      link_to 'follow', {:controller => 'friends', :action => 'follow', :fid=>obj.user.id}, :remote => true, :class =>'followlk'
+    elsif obj.user_id !=session[:user_id]
+      link_to 'unfollow', {:controller => 'friends', :action => 'unfollow', :fid=>obj.user.id}, :remote => true, :class =>'followlk'
     end
   end
   

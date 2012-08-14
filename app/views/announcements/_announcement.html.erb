@@ -1,0 +1,6 @@
+<div id="siteMsg">
+<div id="siteMsg-padding">
+<%=announcement.body%>
+<%=link_to image_tag("closeBtn-orange.png", :id=>announcement.id),{:controller=>"users_announcements", :action=>"dismiss", :aid=>announcement.id},:remote =>true, :class=>"closeBtn", :id=>announcement.id%>
+</div>
+</div>

@@ -43,7 +43,11 @@ end
   end
   
   def ancmts
-    Announcement.find_all_by_enabled(1)
+    announcements = Array.new
+    UsersAnnouncement.find(:all, :conditions => ["user_id = ? and dismiss_date is null", session[:user_id]]).map{|ua| ua.announcement_id}.each do |aid|
+      announcements.push(Announcement.find(aid))
+    end
+    announcements
   end
   
 end

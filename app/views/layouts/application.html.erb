@@ -16,9 +16,9 @@
   </div><!--header end-->
   
   <div id="currentpage"></div>
-
-  <div id="announcement"></div>
-  
+<%if params[:controller] == 'webpages'%>
+  <div id="announcement" style="height: 47px;"><%=render ancmts%></div>
+<%end%>
   <div id="content">
     <% if !session[:user_id].nil? %>
 				<div class="profile">

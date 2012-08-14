@@ -57,7 +57,12 @@
 <%= link_to 'Back', users_path %>
 <div id="followers">
   <%if @user.followers.count > 0%>
-    You have some followers
+  You have some followers
+    <% @user.followers.each do |fe|%>
+    <div>
+      <%=useravatar(fe)%><%=link_to fe.username, fe%>
+    </div>
+    <%end%>
   <%end%>
 </div>
 <div id="followees">

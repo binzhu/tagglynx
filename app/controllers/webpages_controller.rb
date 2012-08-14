@@ -5,13 +5,11 @@ class WebpagesController < ApplicationController
     if !params[:url].nil?
       crt_pg = Webpage.find_by_url(params[:url])
         if crt_pg.nil?
-          pg = Webpage.new(:url => params[:url],
+          @pg = Webpage.new(:url => params[:url],
                            :user_id => session[:user_id],
                            :title => params[:title])
-          if pg.save
-            redirect_to pg
-            return
-          end
+          redirect_to @pg
+          return
         else
           redirect_to crt_pg
           return
@@ -30,8 +28,8 @@ class WebpagesController < ApplicationController
   # GET /webpages/1
   # GET /webpages/1.json
   def show
-
     @webpage = Webpage.find(params[:id])
+    session[:web_id]=@webpage.id
     @discussion = Discussion.new
     @comment = Comment.new
     respond_to do |format|

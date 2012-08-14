@@ -1,14 +1,17 @@
 Tagglynx::Application.routes.draw do
+  get "users_announcements/dismiss"
+  resources :users_announcements
+  
   resources :tags
 
   resources :announcements
-
+  get "users/getfollowees"
   get "admin/announcement"
+  get "friends/unfollow"
   get "friends/follow"
   get "users/register"
   post "admin/login"
   get "admin/login"
-
   get "admin/logout"
 
   resources :friends

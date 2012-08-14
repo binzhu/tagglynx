@@ -2,11 +2,21 @@ $(document).ready(function(){
     /*###########start of comment page js############*/
 	// alert("loaded!");
         
-        
+        	jQuery("a.closeBtn").click(function() {
+                        //alert($(this).attr("id"));
+                        
+			jQuery(this).offsetParent().fadeOut("slow");
+                        height = jQuery("#announcement").css("height").replace(/[^-\d\.]/g, '');
+                        height = height - 47;
+                        jQuery("#announcement").css("height", height);
+                        
+		});
         
         
         if ($('#messageboard-container').length > 0){
             alert(" message page loaded");
+            //this page load test is not working
+            
             //alert($('div#sidebar').id);
         }
         
@@ -14,10 +24,12 @@ $(document).ready(function(){
         $('.followlkclass').find("a").click(function(){
             //alert("clicked!");
             //functionality is made through ajax request, here just adjust the view
-            $(this).parent().html("followed");
+            alert($(this).html());
+            //$(this).parent().html("followed");
         })
 
-        
+        anncementNum = jQuery("#announcement").find("#siteMsg").size();
+        jQuery("#announcement").css("height",47*anncementNum);
         
 	var windowHeight;
 	var windowWidth;
@@ -192,7 +204,7 @@ $(document).ready(function(){
 		jQuery(this).parents("li").find("h2").prepend(childNumCombo).click(function() {
 			jQuery(this).parents("li").find("ul").slideToggle("fast");
 			//jQuery("#advertisements").toggle();
-			jQuery(this).parents("li").find(".expandBox").toggleClass("minus");
+			jQuery(this).parents("li").find(".plus").toggleClass("minus");
                     })
                 
                 /* changed made by Bin, clicking on anywhere in the discussion will open the discussion.

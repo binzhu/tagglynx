@@ -1,0 +1,27 @@
+<h1>Listing users_announcements</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Announcement</th>
+    <th>Dismiss date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users_announcements.each do |users_announcement| %>
+  <tr>
+    <td><%= users_announcement.user_id %></td>
+    <td><%= users_announcement.announcement_id %></td>
+    <td><%= users_announcement.dismiss_date %></td>
+    <td><%= link_to 'Show', users_announcement %></td>
+    <td><%= link_to 'Edit', edit_users_announcement_path(users_announcement) %></td>
+    <td><%= link_to 'Destroy', users_announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Users announcement', new_users_announcement_path %>

@@ -4,7 +4,10 @@ class AdminController < ApplicationController
       user = User.find_by_username(params[:username])
       if user && user.pwd == params[:pwd]
         session[:user_id] = user.id
-        redirect_to '/'
+        if session[:url].nil? || session[:title].nil?
+          redirect_to 'http://localhost:3000'
+        end
+        redirect_to 'http://localhost:3000?url='+session[:url] + '&title=' + session[:title]
       else
         redirect_to(:back, notice: "invalid login info")
       end

@@ -268,6 +268,22 @@ width: 15px;
 height: 18px;
 position: absolute;
 }
+/*toggle button for discussion thread*/
+.plus {
+background-image: url('ui-icons-white.png');
+background-position: -49px -190px;
+width: 15px;
+height: 18px;
+position: absolute;
+}
+
+.minus {
+background-image: url('ui-icons-white.png');
+background-position: -65px -190px;
+width: 15px;
+height: 18px;
+position: absolute;
+}
 
 
 #sub-parent {
@@ -578,9 +594,8 @@ overflow:hidden;
     text-transform:none;
 }
 a.followlk,a.followlk:hover{
-    text-decoration: none;
     text-transform:none;
-    color: black;
+
 }
 
 /*############# end ofcomment form style ###############*/
@@ -711,6 +726,37 @@ line-height: 50px;
 /*login page css end*/
 
 /*register css start*/
+
+#alertMsg {
+width: 280px;
+position:relative;
+color: black;
+background-color: pink;
+border: 1px solid red;
+margin-bottom: 10px;
+display: none;
+}
+
+
+#siteMsg {
+width: 280px;
+position:relative;
+color: #aa5d00;
+background-color: #ffe3c2;
+border: 1px solid #f7941d;
+margin-bottom: 10px;
+}
+
+#siteMsg-padding {
+padding: 10px 0px 10px 10px;
+}
+
+.closeBtn {
+position:absolute;
+top: 0;
+right: 0;
+z-index: 5;
+}
 
 h1 a.backTo {
 text-align: right;
