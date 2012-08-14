@@ -4,10 +4,14 @@ class AdminController < ApplicationController
       user = User.find_by_username(params[:username])
       if user && user.pwd == params[:pwd]
         session[:user_id] = user.id
+        
         if session[:url].nil? || session[:title].nil?
-          redirect_to 'http://localhost:3000'
+          localserver = 'http://localhost:3000'
+          rackspaceserver = 'http://198.101.236.20:3000'
+          redirect_to rackspaceserver
+          return
         end
-        redirect_to 'http://localhost:3000?url='+session[:url] + '&title=' + session[:title]
+        redirect_to rackspaceserver + '?url='+session[:url] + '&title=' + session[:title]
       else
         redirect_to(:back, notice: "invalid login info")
       end

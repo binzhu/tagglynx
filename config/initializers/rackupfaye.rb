@@ -1,3 +1,3 @@
 Thread.new do
-  system("rackup faye.ru -s thin -E production -p 33909")
+  system("rackup faye.ru -s thin -E production")
 end

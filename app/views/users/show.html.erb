@@ -6,7 +6,7 @@
   <b>Username:</b>
   <%= @user.username %>
 </p>
-<%=@user.pwd%>
+
 <p>
   <b>First name:</b>
   <%= @user.fname %>
@@ -62,6 +62,7 @@
     <div>
       <%=useravatar(fe)%><%=link_to fe.username, fe%>
     </div>
+    <br />
     <%end%>
   <%end%>
 </div>
@@ -72,6 +73,7 @@
     <div>
       <%=useravatar(fe)%><%=link_to fe.username, fe%>
     </div>
+    <br />
     <%end%>
   <%end%>
 </div>

@@ -18,14 +18,20 @@
 $(document).ready(function(){
     //alert("app js loaded");
     serverbase = "http://localhost:3000"
-    uri = serverbase + "/users/getfollowees.json"
-
+    rackspaceserver= "http://198.101.236.20:3000"
+    
+    localfaye = 'http://localhost:9292/faye'
+    rackspacefaye = 'http://198.101.236.20:9292/faye'
+    
+    uri = rackspaceserver + "/users/getfollowees.json"
+    
+    
 if ($('.messageboard-container').length > 0)  {    
     //alert("message page loaded");
     // only open push notification on this page, for now
     
     
-    uri = "http://localhost:3000/users/getfollowees.json";
+    
     
     //ajax call to subscribe to followee's channel
     $.ajax({type:"get",
@@ -37,7 +43,7 @@ if ($('.messageboard-container').length > 0)  {
                 //alert(data[i]);
                     //code to subscribe to friends channel
                     //console.log("/friendpost/" + data[i]);
-                    var faye = new Faye.Client('http://localhost:9292/faye');
+                    var faye = new Faye.Client(rackspacefaye);
                     faye.subscribe("/friendpost/" + data[i], function(data) {
                     //alert(data);
                     //$('#announcement').text("friend posting comments");
@@ -60,7 +66,7 @@ if ($('.messageboard-container').length > 0)  {
     //alert(data);
     });
     //end of faye subscription
-*/
+    */
     
     
 }
