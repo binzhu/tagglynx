@@ -5,7 +5,7 @@
   <div class="messageboard-padding">
     <div class="listingBox" id="<%=d.id%>">
       
-        <h2><div class="plus"></div><div style="padding-left:15px;"><%= d.title%></div></h2>
+        <h2><div class="plus"></div><div style="padding-left:15px;"> &nbsp;<%= d.title%></div></h2>
         <div class="profileBox">
           <%=useravatar(d.user)%>
         </div><!--profile box end-->
@@ -20,7 +20,7 @@
           <%=render :partial=>"comments/form", :locals => { :did => d.id }  %>
         </div>
         <%@comments = d.comments.all.sort_by { |c| c[:created_at] }.reverse%>
-        <div class="commentlist">
+        <div class="commentlist" id="<%=d.id%>">
           <%=render @comments%>
         </div>
         </ul>

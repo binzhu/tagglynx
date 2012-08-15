@@ -24,7 +24,7 @@ $(document).ready(function(){
         $('.followlkclass').find("a").click(function(){
             //alert("clicked!");
             //functionality is made through ajax request, here just adjust the view
-            alert($(this).html());
+            //alert($(this).html());
             //$(this).parent().html("followed");
         })
 

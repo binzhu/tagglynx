@@ -2,12 +2,21 @@ module ApplicationHelper
 
 
 def broadcast(channel, &block)
+  #"http://localhost:9292/faye"
+  #"http://198.101.236.20:9292/faye"
   message = {:channel => channel, :data => capture(&block)}
-  uri = URI.parse("http://198.101.236.20:9292/faye")
+  uri = URI.parse("http://l198.101.236.20:9292/faye")
   Net::HTTP.post_form(uri, :message => message.to_json)
 end
 
-
+  def str_cut(str)
+    if str.length >= 40
+      str[0..40] + ".."
+    else
+      str
+    end
+    
+  end
   
   def crt_user
     if !session[:user_id].nil?

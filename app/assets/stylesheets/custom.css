@@ -747,15 +747,36 @@ border: 1px solid #f7941d;
 margin-bottom: 10px;
 }
 
+#friendMsg{
+width: 280px;
+position:relative;
+color: #aa5d00;
+background-color: #ffe3c2;
+border: 1px solid #f7941d;
+margin-bottom: 5px;
+margin-bottom: 5px; 
+}
+
 #siteMsg-padding {
 padding: 10px 0px 10px 10px;
 }
-
+img.notifavatar{
+    position:relative;
+    
+}
 .closeBtn {
 position:absolute;
 top: 0;
 right: 0;
 z-index: 5;
+}
+a.msgDismiss{
+background-image: url("closeBtn-orange.png");
+width: 15px;
+height: 16px;
+background-color: orange;
+position: absolute;
+left: 260px;
 }
 
 h1 a.backTo {

@@ -29,7 +29,7 @@ $(document).ready(function(){
 if ($('.messageboard-container').length > 0)  {    
     //alert("message page loaded");
     // only open push notification on this page, for now
-
+    $("#sidebar").css("overflow","hidden");
     
     //ajax call to subscribe to followee's channel
     $.ajax({type:"get",
@@ -45,8 +45,9 @@ if ($('.messageboard-container').length > 0)  {
                     faye.subscribe("/friendpost/" + data[i], function(data) {
                     //alert(data);
                     //$('#announcement').text("friend posting comments");
-                    eval(data);
                     //alert(data);
+                    eval(data);
+                    
                     });
                     //end of code to subscribe to friends faye channel
                 //Do something
