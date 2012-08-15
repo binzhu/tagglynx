@@ -10,9 +10,9 @@
           <%=useravatar(d.user)%>
         </div><!--profile box end-->
         <div class="msgContent">
-          <h3><%=d.user.username%>  <div style="display: inline;" class="followlkclass" ><%=followlk(d)%></div><span class="timestamp">1 mins</span></h3>
+          <h3><span class="username" ><%=d.user.username%></span> <span class="followlkclass" ><%=followlk(d)%></span><span class="timestamp">1 mins</span></h3>
           <p><%=d.content%></p>
-          <p class="readMore"><a href="#" id="<%=d.id%>">&laquo; Reply</a></p>
+          <p class="readMore"><a href="#" class="reply_discussion" id="<%=d.id%>">&laquo; Reply</a></p>
         </div><!--msgContent end-->
 
         <ul class="discussion_ul" id="<%=d.id%>">

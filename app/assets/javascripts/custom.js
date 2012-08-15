@@ -217,14 +217,22 @@ $(document).ready(function(){
 	});
 	
         /* fill comment box with user id */
-        $('li.commentitem').find("a.replylink").click(function(){
-            //alert(this.parents("li"));
-            //alert("div.username #"+this.id);
-            //alert($("div.username #33").val());
-            //$(this).parents("ul").attr("id")) // selected the parent ul
+        $("a.reply_comment").click(function(){
+            //alert("clicked!");
+            var reply_com_username = $(this).parents(".msgContent").find(".replycom_username").text();
+            jQuery(this).parents(".listingBox").find(".commentform textarea").attr("value", "@"+reply_com_username +": ");
             
+            return false
             
             });
+        $("a.reply_discussion").click(function(){
+            jQuery(this).parents("li").find("ul").slideToggle("fast");
+			//jQuery("#advertisements").toggle();
+	    jQuery(this).parents("li").find(".plus").toggleClass("minus");
+            var replyUsername = jQuery(this).parents(".msgContent").find(".username").text();
+            //alert(replyUsername);
+            jQuery(this).parents(".listingBox").find(".commentform textarea").attr("value", "@"+replyUsername +": ");
+            })
         
         
 	jQuery("#flyout-expand").click(function(event) {
