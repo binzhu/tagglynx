@@ -38,7 +38,7 @@ if ($('.messageboard-container').length > 0)  {
            success:function(data){
                     //console.log(data)
                 for (var i = 0; i < data.length; i++) {
-                //alert(data[i]);
+                    //alert(data[i]);
                     //code to subscribe to friends channel
                     //console.log("/friendpost/" + data[i]);
                     var faye = new Faye.Client(rackspacefaye);
