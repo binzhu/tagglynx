@@ -23,7 +23,7 @@ $(document).ready(function(){
     localfaye = 'http://localhost:9292/faye'
     rackspacefaye = 'http://198.101.236.20:9292/faye'
     
-    uri = rackspaceserver + "/users/getfollowees.json"
+    uri = localserver + "/users/getfollowees.json"
     
     
 if ($('.messageboard-container').length > 0)  {    

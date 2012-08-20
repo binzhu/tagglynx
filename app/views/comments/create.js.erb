@@ -15,7 +15,8 @@ ancmtStr = ancmtStr + '<a href="#" class="msgDismiss">x</a>' + '</div>'
 
 //var username = "<%=@comment.user.username%>";
 
-<%broadcast "/friendpost/"+@comment.user.username do %>//only broadcast to user's own channel
+<%broadcast "/friendpost/"+@comment.user.username do %>
+
     var height = $('#announcement').height();
     $('#announcement').height(height + 34);
 $('#announcement').append('<div id="friendMsg">' + '<%=link_to noficavatar(@comment), @comment.discussion.webpage.url, :target=>"blank"%>' + '<%=link_to str_cut(@comment.discussion.webpage.title), @comment.discussion.webpage.url, :target=>"blank"%>' +  '<a href="javascript: void(0)" class="msgDismiss"></a>' + '</div>');
