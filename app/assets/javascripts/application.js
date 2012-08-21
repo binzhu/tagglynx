@@ -25,12 +25,11 @@ $(document).ready(function(){
     
     uri = rackspaceserver + "/users/getfollowees.json"
     
-    
 if ($('.messageboard-container').length > 0)  {    
     //alert("message page loaded");
     // only open push notification on this page, for now
     $("#sidebar").css("overflow","hidden");
-    
+
     //ajax call to subscribe to followee's channel
     $.ajax({type:"get",
            url:uri,
@@ -42,12 +41,11 @@ if ($('.messageboard-container').length > 0)  {
                     //code to subscribe to friends channel
                     //console.log("/friendpost/" + data[i]);
                     var faye = new Faye.Client(rackspacefaye);
-                    faye.subscribe("/friendpost/" + data[i], function(data) {
+                    faye.subscribe("/friendpost/" + data[i], function(data){
                     //alert(data);
                     //$('#announcement').text("friend posting comments");
                     //alert(data);
                     eval(data);
-                    
                     });
                     //end of code to subscribe to friends faye channel
                 //Do something
