@@ -3,7 +3,7 @@
             <div class="listingBox">
               <div class="profileBox"><%=useravatar(comment.user)%></div>
               <div class="msgContent">
-                <h3><span class="replycom_username"><%=comment.user.username%></span><span class="followlkclass" ><%=followlk(comment)%></span> <span class="timestamp">2 min</span></h3>
+                <h3><span class="replycom_username"><%=comment.user.username%></span><span class="followlkclass" ><%=followlk(comment)%></span> <span class="timestamp"><%=time_ago_in_words(comment.created_at)%></span></h3>
                 <p><%=comment.content%></p>
                 <p class="readMore"><a href="#" id="<%=comment.id%>" class="reply_comment">&laquo; Reply</a></p>
               </div><!--msgContent end-->

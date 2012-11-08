@@ -17,6 +17,7 @@
 
 $(document).ready(function(){
     //alert("app js loaded");
+    
     localserver = "http://localhost:3000"
     rackspaceserver= "http://198.101.236.20:3000"
     

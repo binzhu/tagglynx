@@ -1,0 +1,9 @@
+<%if !@comments.nil?%>
+  <%@comments.each do |c|%>
+<div id="friendMsg">
+  <%=c.user.username%> commented on: 
+  <%=link_to str_cut(c.discussion.webpage.title), c.discussion.webpage.url, :target=>"blank"%><br />
+  <%=time_from_now(Time.now - c.created_at)%>
+</div>
+  <%end%>
+<%end%>

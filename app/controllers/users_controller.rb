@@ -9,6 +9,15 @@ class UsersController < ApplicationController
     end
   end
   
+  
+  def user_activities
+    if !params[:uid].nil?
+      @comments = Comment.find_all_by_user_id(params[:uid]).reverse  #.first(10)
+    end
+  end
+    
+  
+  
   def getfollowees
     if !session[:user_id].nil?
       @followees = User.find(session[:user_id]).followees.map{|fle| fle.username }
@@ -54,6 +63,9 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    if session[:user_id] != params[:id]
+      redirect_to "/"
+    end
     @user = User.find(params[:id])
   end
 

@@ -1,4 +1,4 @@
-$("div #<%=@comment.discussion_id%> .commentlist").prepend("<%= escape_javascript render(@comment) %>");
+$("div #<%=@comment.discussion_id%> .commentlist").append("<%= escape_javascript render(@comment) %>");
 //$("div #<%=@comment.discussion_id%> .commentlist").find("textarea").val("");
 jQuery('textarea#comment_content').val("");
 //alert("div #<%=@comment.discussion_id%> .commentlist");

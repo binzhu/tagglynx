@@ -1,4 +1,5 @@
 Tagglynx::Application.routes.draw do
+  get "users/user_activities"
   get "users_announcements/dismiss"
   resources :users_announcements
   

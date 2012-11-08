@@ -45,6 +45,7 @@ class DiscussionsController < ApplicationController
     respond_to do |format|
       if @discussion.save
         format.html { redirect_to(:back) }
+        format.js
         format.json { render json: @discussion, status: :created, location: @discussion }
       else
         format.html { render action: "new" }

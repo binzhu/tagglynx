@@ -29,5 +29,14 @@ class User < ActiveRecord::Base
   def followees
     Friend.find_all_by_follower_id(id).map{ |f| f.followee}
   end
+  
+  def followees_feed
+    feed = Array.new
+    followees.each do |user|
+      comments = Comment.find_all_by_user_id(params[:uid]).reverse.first(10)
+      comments.each do |c|
+      end
+    end
+  end
 
 end

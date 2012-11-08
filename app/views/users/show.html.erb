@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
   <%= useravatar @user %>
-
+<%=link_to "feed", :controller=>"users", :action=>"user_activities", :uid=>@user.id%>
 <p>
   <b>Username:</b>
   <%= @user.username %>
@@ -53,7 +53,10 @@
 </p>
 
 
+<%if session[:user_id] == @user.id%>
 <%= link_to 'Edit', edit_user_path(@user) %> |
+<%end%>
+
 <%= link_to 'Back', users_path %>
 <div id="followers">
   <%if @user.followers.count > 0%>
