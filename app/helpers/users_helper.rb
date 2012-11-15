@@ -16,10 +16,19 @@ module UsersHelper
   end
   
   def noficavatar(comment)
-    if !comment.user.avatar_file_name.nil?
+    if comment.user.avatar_file_name
       image_tag comment.user.avatar.url(:thumb), :size=>"25x25", :title=>comment.user.username + "@" + comment.discussion.webpage.title, :class=>"notifavatar"
     else
       image_tag 'default_avatar.jpg', :size=>"25x25", :title=>comment.user.username + "@" + comment.discussion.webpage.title, :class=>"notifavatar"
     end
   end
+  
+  def noficdavatar(discussion)
+    if discussion.user.avatar_file_name
+      image_tag discussion.user.avatar.url(:thumb), :size=>"25x25", :title=>discussion.user.username + "@" + discussion.webpage.title, :class=>"notifavatar"
+    else
+      image_tag 'default_avatar.jpg', :size=>"25x25", :title=>discussion.user.username + "@" + discussion.webpage.title, :class=>"notifavatar"
+    end
+  end
+  
 end

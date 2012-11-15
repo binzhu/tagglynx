@@ -40,6 +40,7 @@ class DiscussionsController < ApplicationController
   # POST /discussions
   # POST /discussions.json
   def create
+    @comment = Comment.new
     @discussion = Discussion.new(params[:discussion])
       @discussion.user_id = session[:user_id]
     respond_to do |format|

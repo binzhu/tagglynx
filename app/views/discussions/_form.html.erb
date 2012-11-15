@@ -1,7 +1,7 @@
 <div class="discussion-box">
   <div class="discussion-padding">
     <h2><span class="arrow"></span><a href="#" id="add">Start a New Discussion</a></h2>
-<%= form_for(@discussion, :id=>"discussion") do |f| %>
+<%= form_for(@discussion, :id=>"discussion", :remote => true) do |f| %>
   <% if @discussion.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@discussion.errors.count, "error") %> prohibited this discussion from being saved:</h2>

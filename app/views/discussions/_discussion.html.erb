@@ -1,0 +1,29 @@
+<li>
+  <div class="messageboard-padding">
+    <div class="listingBox" id="<%=discussion.id%>">
+      
+        <h2 id="<%=discussion.id%>"><div class="plus"></div><div style="padding-left:15px;"> &nbsp;<%= discussion.title%></div></h2>
+        <div class="profileBox">
+          <%=useravatar(discussion.user)%>
+        </div><!--profile box end-->
+        <div class="msgContent">
+          <h3><span class="username" ><%=discussion.user.username%></span> <span class="followlkclass" ><%=followlk(discussion)%></span><span class="timestamp"><%=time_ago_in_words(discussion.created_at)%> </span></h3>
+          <p><%=discussion.content%></p>
+          <p class="readMore"><a href="#" class="reply_discussion" id="<%=discussion.id%>">&laquo; Reply</a></p>
+        </div><!--msgContent end-->
+
+        <ul class="discussion_ul" id="<%=discussion.id%>">
+
+        <%@comments = discussion.comments.all.sort_by { |c| c[:created_at] }%>
+        <div class="commentlist" id="<%=discussion.id%>">
+          <%=render @comments%>
+        </div>
+        <div class="commentform">
+          <%=render :partial=>"comments/form", :locals => { :did => discussion.id }  %>
+        </div>  
+        </ul>
+    <div class="fix"></div>
+    </div><!-- listing end -->
+    <div class="fix"></div>
+  </div><!-- LI padding end -->
+</li>

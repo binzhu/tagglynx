@@ -216,15 +216,7 @@ $(document).ready(function(){
                         });*/
 	});
 	
-        /* fill comment box with user id */
-        $("a.reply_comment").click(function(){
-            //alert("clicked!");
-            var reply_com_username = $(this).parents(".msgContent").find(".replycom_username").text();
-            jQuery(this).parents(".listingBox").find(".commentform textarea").attr("value", "@"+reply_com_username +": ");
-            
-            return false
-            
-            });
+
         $("a.reply_discussion").click(function(){
             jQuery(this).parents("li").find("ul").slideToggle("fast");
 			//jQuery("#advertisements").toggle();
@@ -233,6 +225,17 @@ $(document).ready(function(){
             //alert(replyUsername);
             jQuery(this).parents(".listingBox").find(".commentform textarea").attr("value", "@"+replyUsername +": ");
             })
+        /* fill comment box with user id */
+        $("a.reply_comment").click(function(){
+            //alert("clicked!");
+            var reply_com_username = $(this).parents(".msgContent").find(".replycom_username").text();
+            var input =jQuery(this).parents(".listingBox").find(".commentform textarea")
+            
+            input.focus();
+            input.val("@"+reply_com_username +": ")
+            return false
+            
+            });        
         
         
 	jQuery("#flyout-expand").click(function(event) {

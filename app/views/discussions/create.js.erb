@@ -1,0 +1,52 @@
+//alert("discussion created");
+var msgBoard = $("#messageboard");
+msgBoard.append("<%= escape_javascript render(@discussion) %>");
+
+childNum = msgBoard.find("ul#<%=@discussion.id%>").find("li").size();
+
+childNumCombo = '<span class="commentNum">' + childNum + '</span>';
+    msgBoard.find("h2#<%=@discussion.id%>").prepend(childNumCombo).click(function() {
+    msgBoard.find("ul#<%=@discussion.id%>").slideToggle("fast");
+    //jQuery("#advertisements").toggle();
+    //msgBoard.parents("li").find(".plus").toggleClass("minus");
+})
+        $("a.reply_discussion").last().click(function(){
+            jQuery(this).parents("li").find("ul").slideToggle("fast");
+			//jQuery("#advertisements").toggle();
+	    jQuery(this).parents("li").find(".plus").toggleClass("minus");
+            var replyUsername = jQuery(this).parents(".msgContent").find(".username").text();
+            //alert(replyUsername);
+            var input = jQuery(this).parents(".listingBox").find(".commentform textarea");
+            //input.attr("value", "@"+replyUsername +": ");
+            input.focus();
+            input.val("@"+replyUsername +": ")
+            })
+        /* fill comment box with user id */
+        $("a.reply_comment").last().click(function(){
+            //alert("clicked!");
+            var reply_com_username = $(this).parents(".msgContent").find(".replycom_username").text();
+            var input = jQuery(this).parents(".listingBox").find(".commentform textarea");
+            //input.attr("value", "@"+reply_com_username +": ");
+            input.focus();
+            input.val("@"+reply_com_username +": ")
+            return false
+            
+            });           
+jQuery("#new_discussion").slideToggle();
+///////above is to add new discussion via ajax after new discussion form submission
+
+<%broadcast "/friendpost/"+@discussion.user.username do %>
+
+    var height = $('#announcement').height();
+    $('#announcement').height(height + 34);
+$('#announcement').append('<div id="friendMsg">' + '<%=link_to noficdavatar(@discussion), @discussion.webpage.url, :target=>"blank"%>' + '<%=link_to str_cut(@discussion.webpage.title), @discussion.webpage.url, :target=>"blank"%>' +  '<a href="javascript: void(0)" class="msgDismiss"></a>' + '</div>');
+//setTimeout(function(){ $('#announcement').html("")},3000);
+//timeout function can control the notification to live for a short time only
+    $('a.msgDismiss').click(function(){
+        $(this).parent().fadeOut();
+        var height = $('#announcement').height();
+        $('#announcement').height(height - 34);                                   
+    })
+
+<%end%>
+

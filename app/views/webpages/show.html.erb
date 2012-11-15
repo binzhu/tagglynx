@@ -14,8 +14,9 @@
   </div><!-- ####### flyout end ######## -->
   
   <div class="messageboard-container">
-    <%=render 'discussions'%>
-    
+    <ul id="messageboard">
+      <%=render @discussions%>
+    </ul><!--message board ul end-->
   </div><!-- messageboard-container end -->
   <div class="fix"></div>
 </div><!--sub parent end-->

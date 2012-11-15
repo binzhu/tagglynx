@@ -34,6 +34,7 @@ class WebpagesController < ApplicationController
   # GET /webpages/1.json
   def show
     @webpage = Webpage.find(params[:id])
+    @discussions = @webpage.discussions.all.sort_by{ |d| d[:created_at] }
     session[:web_id]=@webpage.id
     @discussion = Discussion.new
     @comment = Comment.new
