@@ -19,7 +19,7 @@ ancmtStr = ancmtStr + '<a href="#" class="msgDismiss">x</a>' + '</div>'
 
     var height = $('#announcement').height();
     $('#announcement').height(height + 34);
-$('#announcement').append('<div id="friendMsg">' + noficavatar(@comment)+ '<%=link_to "#{@comment.user.username} left a comment at #{@comment.discussion.webpage.title}", @comment.discussion.webpage.url, :target=>"blank"%>' + '<%=link_to str_cut(@comment.discussion.webpage.title), @comment.discussion.webpage.url, :target=>"blank"%>' +  '<a href="javascript: void(0)" class="msgDismiss"></a>' + '</div>');
+$('#announcement').append('<div id="friendMsg">' + "<%=noficavatar(@comment)%>"+ '<%=link_to "#{@comment.user.username} left a comment at #{@comment.discussion.webpage.title}", @comment.discussion.webpage.url, :target=>"blank"%>' + '<%=link_to str_cut(@comment.discussion.webpage.title), @comment.discussion.webpage.url, :target=>"blank"%>' +  '<a href="javascript: void(0)" class="msgDismiss"></a>' + '</div>');
 //setTimeout(function(){ $('#announcement').html("")},3000);
 //timeout function can control the notification to live for a short time only
     $('a.msgDismiss').click(function(){
