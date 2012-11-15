@@ -39,7 +39,7 @@ jQuery("#new_discussion").slideToggle();
 
     var height = $('#announcement').height();
     $('#announcement').height(height + 34);
-$('#announcement').append('<div id="friendMsg">' + "<%=noficdavatar(@comment)%>" + '<%=link_to "#{@discussion.user.username} started a topic at #{@discussion.webpage.title}", @discussion.webpage.url, :target=>"blank"%>' + '<%=link_to str_cut(@discussion.webpage.title), @discussion.webpage.url, :target=>"blank"%>' +  '<a href="javascript: void(0)" class="msgDismiss"></a>' + '</div>');
+$('#announcement').append('<div id="friendMsg">' + '<%=link_to noficdavatar(@discussion), @discussion.webpage.url, :target=>"blank"%>' + '<%=link_to str_cut(@discussion.webpage.title), @discussion.webpage.url, :target=>"blank"%>' +  '<a href="javascript: void(0)" class="msgDismiss"></a>' + '</div>');
 //setTimeout(function(){ $('#announcement').html("")},3000);
 //timeout function can control the notification to live for a short time only
     $('a.msgDismiss').click(function(){
