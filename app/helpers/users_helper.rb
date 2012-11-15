@@ -17,17 +17,17 @@ module UsersHelper
   
   def noficavatar(comment)
     if comment.user.avatar_file_name
-      image_tag comment.user.avatar.url(:thumb), :size=>"25x25", :title=>comment.user.username + " left a comment " + "@" + "#{comment.user.username} left a comment at " + comment.discussion.webpage.title, :class=>"notifavatar"
+      image_tag comment.user.avatar.url(:thumb), :size=>"25x25", :title=>comment.user.username + " left a comment " + "@" + comment.discussion.webpage.title, :class=>"notifavatar"
     else
-      image_tag 'default_avatar.jpg', :size=>"25x25", :title=>comment.user.username + "@" + comment.discussion.webpage.title, :class=>"notifavatar"
+      image_tag 'default_avatar.jpg', :size=>"25x25", :title=>comment.user.username + " left a comment "  + "@" + comment.discussion.webpage.title, :class=>"notifavatar"
     end
   end
   
   def noficdavatar(discussion)
     if discussion.user.avatar_file_name
-      image_tag discussion.user.avatar.url(:thumb), :size=>"25x25", :title=>discussion.user.username + " started a topic "+ "@" + "#{discussion.user.username} started a discussion at " + discussion.webpage.title, :class=>"notifavatar"
+      image_tag discussion.user.avatar.url(:thumb), :size=>"25x25", :title=>discussion.user.username + " started a topic " + "@"  + discussion.webpage.title, :class=>"notifavatar"
     else
-      image_tag 'default_avatar.jpg', :size=>"25x25", :title=>discussion.user.username + "@" + discussion.webpage.title, :class=>"notifavatar"
+      image_tag 'default_avatar.jpg', :size=>"25x25", :title=>discussion.user.username + " started a topic " + "@" + discussion.webpage.title, :class=>"notifavatar"
     end
   end
   
