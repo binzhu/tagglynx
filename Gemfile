@@ -6,6 +6,7 @@ gem 'rb-readline' # good for rails console can be commented out when go live
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem 'faye'
 gem 'thin'
+gem 'yaml_db'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
